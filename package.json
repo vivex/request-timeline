@@ -1,6 +1,6 @@
 {
   "name": "request-timeline",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A nodejs module to generate a request timeline graph",
   "main": "index.js",
   "scripts": {
@@ -12,10 +12,9 @@
     "request",
     "nodejs"
   ],
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "https://github.com/vivex/request-timeline"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vivex/request-timeline"
   },
   "author": "Vivek Soni <lucid.vivek@gmail.com> (http://vivex.me)",
   "license": "MIT",
