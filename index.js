@@ -30,8 +30,8 @@ var requestTimeLineMiddleware = function (req, res, next) {
         var html = `
     <html>
     <head>
-    <link rel="stylesheet" href="http://visjs.org/dist/vis.css"></html>
-    <script src="http://visjs.org/dist/vis.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"></html>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
     </head>
     <body>
         <div id="timeline"></div>
@@ -66,7 +66,8 @@ var requestTimeLineMiddleware = function (req, res, next) {
 </html>
   `;
         var now = new Date();
-        var filename = 'Request-TimeLine-' + now.getHours() + '-' + now.getMinutes()+ '-'  + now.getSeconds()+ '-'  + now.getMilliseconds()+ '-'   + now.getFullYear() + "-"+ now.getMonth() + "-" + now.getDate() +'.html';
+        fs.mkdir(path.join(__dirname,'../../', 'request-timeline-output'), console.error);
+        var filename = 'request-timeline-output/Request-TimeLine-' + now.getHours() + '-' + now.getMinutes()+ '-'  + now.getSeconds()+ '-'  + now.getMilliseconds()+ '-'   + now.getFullYear() + "-"+ now.getMonth() + "-" + now.getDate() +'.html';
         var file = path.join(__dirname,'../../', filename);
 
         fs.writeFile(file, html, function(err) {
